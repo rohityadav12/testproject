@@ -1,0 +1,24 @@
+{
+  "name": "Test",
+  "authors": [
+    "Rohit <test@test.com>"
+  ],
+  "description": "demo",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-fullscreen": "^1.0.1",
+    "jquery-ui": "^1.12.1",
+    "bootstrap": "^3.3.7",
+    "lumx": "^1.5.2"
+  }
+}
