@@ -20,6 +20,25 @@ expApp.get('/test', function(request, response) {
     response.render('index');
 });
 
+expApp.get('/404', function(req, res, next){
+    next();
+});
+
+expApp.use(function(req, res, next){
+    res.status(404);
+
+    res.format({
+        html: function () {
+            res.render('404', { url: req.url })
+        },
+        json: function () {
+            res.json({ error: 'Not found' })
+        },
+        default: function () {
+            res.type('txt').send('Not found')
+        }
+    })
+});
 
 if( port == 5000 ) {
     var options = {
