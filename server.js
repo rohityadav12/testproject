@@ -29,8 +29,10 @@ if( port == 5000 ) {
         
     };
     var https = require('https').createServer(options, expApp);
+    console.log('url','https://localhost:'+port);
 }else{
     var https = require('http').Server(expApp);
+    console.log('url','http://localhost:'+port);
 }
 
 require('./connection.js')(https);
