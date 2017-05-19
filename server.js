@@ -13,11 +13,19 @@ expApp.set('views', __dirname + '/views');
 expApp.set('view engine', 'ejs');
 
 expApp.get('/', function(request, response) {
-    response.render('index')
+    try {
+        response.render('index',{ myVar : "This is index page" });
+    } catch (e) {
+        console.log(e);
+    }
 });
 
 expApp.get('/test', function(request, response) {
-    response.render('index');
+    try {
+        response.render('index',{ myVar : "This is test page" });
+    } catch (e) {
+        console.log(e);
+    }    
 });
 
 expApp.get('/404', function(req, res, next){
@@ -29,7 +37,7 @@ expApp.use(function(req, res, next){
 
     res.format({
         html: function () {
-            res.render('404', { url: req.url })
+            res.render('404', { url: req.url,myVar:"Page not found ( 404 Error )" })
         },
         json: function () {
             res.json({ error: 'Not found' })
